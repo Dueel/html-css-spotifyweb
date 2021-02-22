@@ -9,21 +9,19 @@ body{
 }
 /************************* STRUTTURA *************************/
 
-/* DEBUG:  */
-aside, #top-bar, #contents, #player{
-  background-color: rgba(255, 0, 0, 0.5);
-  border: 2px solid red;
-}
-
 aside{
   width: 230px;
   height: calc(100vh - 90px);
+  background-color: #000;
+  padding: 10px;
   float: left;
+  position: relative;
 }
 
 #top-bar{
   width: calc(100% - 230px);
   height: 90px;
+  background-color: rgba(0, 0, 0, 0.5);
   float: left;
   display: flex;
   justify-content: flex-end;
@@ -35,6 +33,7 @@ aside{
   height: calc(100vh - 180px);
   float: left;
   overflow-y: scroll;
+  background-color: #141922;
 }
 
 main::after{
@@ -45,32 +44,79 @@ main::after{
 
 #player{
   height: 90px;
+  background-color: #282828;
+  z-index: 900;
 }
 
-img{
-  width: 100%;
-  display: block;
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: #A3A3A3;
 }
 
 /************************* REGOLE SPECIFICHE *************************/
 
 /* aside */
 .logo{
-  height: 85px;
-  padding: 10px;
+  height: 70px;
   display: flex;
-  align-items: center;
+  align-items: center;margin-bottom: 10px;
+}
 
-  /* DEBUG:  */
-  background-color: blue;
+.logo img:first-child{
+  width: 150px;
 }
 
 .logo img:last-child{
   display: none;
 }
 
-.page{
-  padding: 10px;
+.page img{
+  width: 30px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.page li{
+  padding-bottom: 5px;
+}
+
+h4{
+  color: white;
+  margin: 20px 0 10px;
+}
+
+.add{
+  background-color: #A3A3A3;
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+
+  color: #000;
+  text-align: center;
+  line-height: 40px;
+
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.playlist{
+  overflow: hidden;
+}
+
+.playlist li{
+  margin-top: 15px;
+}
+
+.profile{
+  width: 210px;
+  height: 50px;
+  background-color: red;
+  position: absolute;
+  bottom: 0;
 }
 
 #top-bar a{
@@ -140,6 +186,11 @@ nav ul li{
   cursor: pointer;
 }
 
+.item img{
+  width: 100%;
+  display: block;
+}
+
 .caption{
   width: 180px;
   padding: 15px 5px;
@@ -176,7 +227,7 @@ nav ul li{
     display: block;
   }
 
-  .page a{
+  .page span{
     display: none;
   }
 
