@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+/************************* STRUTTURA *************************/
+
 /* DEBUG:  */
 nav, #top-bar, #contents, #player{
   background-color: rgba(255, 0, 0, 0.5);
@@ -20,6 +22,9 @@ nav{
   width: calc(100% - 230px);
   height: 90px;
   float: left;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 #contents{
@@ -38,7 +43,35 @@ main::after{
   height: 90px;
 }
 
+/************************* REGOLE SPECIFICHE *************************/
+
+.logo{
+  height: 85px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+
+  /* DEBUG:  */
+  background-color: blue;
+}
+
+.logo img:last-child{
+  display: none;
+}
+
+.page{
+  padding: 10px;
+}
+
+#top-bar a{
+  padding: 20px;
+  border: 1px solid white;
+}
+
+
+
 /************************* RESPONSIVE *************************/
+
 @media all and (max-width: 552px) {
 
   nav{
@@ -51,5 +84,22 @@ main::after{
 
   #contents{
     width: calc(100% - 50px);
+  }
+
+  /* nav */
+  .logo img:first-child{
+    display: none;
+  }
+
+  .logo img:last-child{
+    display: block;
+  }
+
+  .page a{
+    display: none;
+  }
+
+  .playlist{
+    display: none;
   }
 }
