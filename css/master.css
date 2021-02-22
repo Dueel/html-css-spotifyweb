@@ -7,12 +7,12 @@
 /************************* STRUTTURA *************************/
 
 /* DEBUG:  */
-nav, #top-bar, #contents, #player{
+aside, #top-bar, #contents, #player{
   background-color: rgba(255, 0, 0, 0.5);
   border: 2px solid red;
 }
 
-nav{
+aside{
   width: 230px;
   height: calc(100vh - 90px);
   float: left;
@@ -31,6 +31,7 @@ nav{
   width: calc(100% - 230px);
   height: calc(100vh - 180px);
   float: left;
+  overflow: scroll;
 }
 
 main::after{
@@ -43,8 +44,13 @@ main::after{
   height: 90px;
 }
 
+img{
+  width: 100%;
+}
+
 /************************* REGOLE SPECIFICHE *************************/
 
+/* aside */
 .logo{
   height: 85px;
   padding: 10px;
@@ -68,13 +74,65 @@ main::after{
   border: 1px solid white;
 }
 
+/* nav */
+nav{
+  padding: 10px 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
+nav ul li{
+  display: inline-block;
+  margin: 10px;
+}
+
+/* contents */
+.row{
+
+}
+
+.item{
+  width: 180px;
+  margin: 10px;
+  position: relative;
+  float: left;
+}
+
+.layover{
+  width: 180px;
+  height: 180px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  line-height: 180px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.item:hover .layover{
+  display: block;
+}
+
+.caption{
+  background: blue;
+  width: 180px;
+  padding: 10px 5px;
+  text-align: center;
+  position: absolute;
+  top: 180px;
+}
 
 /************************* RESPONSIVE *************************/
 
 @media all and (max-width: 552px) {
 
-  nav{
+  aside{
     width: 50px;
   }
 
@@ -86,7 +144,7 @@ main::after{
     width: calc(100% - 50px);
   }
 
-  /* nav */
+  /* aside */
   .logo img:first-child{
     display: none;
   }
