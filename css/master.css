@@ -1,0 +1,55 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* DEBUG:  */
+nav, #top-bar, #contents, #player{
+  background-color: rgba(255, 0, 0, 0.5);
+  border: 2px solid red;
+}
+
+nav{
+  width: 230px;
+  height: calc(100vh - 90px);
+  float: left;
+}
+
+#top-bar{
+  width: calc(100% - 230px);
+  height: 90px;
+  float: left;
+}
+
+#contents{
+  width: calc(100% - 230px);
+  height: calc(100vh - 180px);
+  float: left;
+}
+
+main::after{
+  content: '';
+  display: table;
+  clear: both;
+}
+
+#player{
+  height: 90px;
+}
+
+/************************* RESPONSIVE *************************/
+@media all and (max-width: 552px) {
+
+  nav{
+    width: 50px;
+  }
+
+  #top-bar{
+    width: calc(100% - 50px)
+  }
+
+  #contents{
+    width: calc(100% - 50px);
+  }
+}
