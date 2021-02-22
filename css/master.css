@@ -4,6 +4,9 @@
   box-sizing: border-box;
 }
 
+body{
+  font-family: 'Montserrat', sans-serif;
+}
 /************************* STRUTTURA *************************/
 
 /* DEBUG:  */
@@ -31,7 +34,7 @@ aside{
   width: calc(100% - 230px);
   height: calc(100vh - 180px);
   float: left;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 main::after{
@@ -46,6 +49,7 @@ main::after{
 
 img{
   width: 100%;
+  display: block;
 }
 
 /************************* REGOLE SPECIFICHE *************************/
@@ -90,14 +94,30 @@ nav ul li{
 
 /* contents */
 .row{
+  color: white;
+  padding: 20px;
+}
 
+.row>p{
+  margin-top: 5px;
+}
+
+.albums, .artists{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 25px;
 }
 
 .item{
   width: 180px;
-  margin: 10px;
+  height: fit-content;
+  margin-right: 20px;
   position: relative;
   float: left;
+}
+
+.item:last-child{
+  margin-right: 0;
 }
 
 .layover{
@@ -117,17 +137,20 @@ nav ul li{
 
 .item:hover .layover{
   display: block;
+  cursor: pointer;
 }
 
 .caption{
-  background: blue;
   width: 180px;
-  padding: 10px 5px;
+  padding: 15px 5px;
   text-align: center;
-  position: absolute;
-  top: 180px;
+  position: relative;
+  bottom: 0;
 }
 
+.artists img{
+  border-radius: 50%;
+}
 /************************* RESPONSIVE *************************/
 
 @media all and (max-width: 552px) {
