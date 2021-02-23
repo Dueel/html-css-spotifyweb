@@ -39,7 +39,6 @@ aside{
   float: left;
   overflow-y: scroll;
   background-color: #141922;
-  position: relative;
 }
 
 main::after{
@@ -51,7 +50,8 @@ main::after{
 #player{
   height: 90px;
   background-color: #282828;
-  z-index: 900;
+  display: flex;
+  justify-content: space-between;
 }
 
 ul{
@@ -272,11 +272,80 @@ nav ul li:first-child .underline{
   display: block;
 }
 
-.artists img{
+.artists img,
+.artists .layover{
   border-radius: 50%;
 }
-/************************* RESPONSIVE *************************/
 
+/* player */
+.player-side,
+.player-center{
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid red;
+  padding: 22.5px 0;
+}
+
+.player-side{
+  flex-basis: 230px;
+  flex-shrink: 1;
+}
+
+.player-side:first-child{
+  padding-left: 10px;
+}
+
+.player-side:last-child{
+  padding-right: 10px;
+}
+
+.player-center{
+  flex-basis: 500px;
+  flex-shrink: 3;
+}
+
+.player-side img{
+  width: 45px;
+  float: left;
+}
+
+#now-playing{
+  float: left;
+  height: 45px;
+  color: #878787;
+  font-size: 13px;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#now-playing p{
+  color: white;
+  font-size: 14px;
+}
+
+.icon{
+  width: 40px;
+  height: 45px;
+
+  float: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon i{
+  color: #878787;
+  transition: color 0.5s ease 0s;
+}
+
+.icon i:hover{
+  color: white;
+}
+
+/************************* RESPONSIVE *************************/
+/* XS */
 @media all and (max-width: 552px) {
 
   aside{
@@ -306,6 +375,17 @@ nav ul li:first-child .underline{
 
   .playlist{
     display: none;
+  }
+}
+
+/*MD*/
+@media all and (max-width: 639px) {
+
+  .icon{
+    width: auto;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
   }
 }
 
