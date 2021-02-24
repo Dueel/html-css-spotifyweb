@@ -240,12 +240,11 @@ nav ul li:first-child .underline{
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   font-size: 30px;
-  text-align: center;
-  line-height: 180px;
+  /* text-align: center;
+  line-height: 180px; */
 
   position: absolute;
   top: 0;
-  left: 0;
   opacity: 0;
 
   transition: opacity 1s ease 0s;
@@ -254,6 +253,31 @@ nav ul li:first-child .underline{
 .item:hover .layover{
   opacity: 1;
   cursor: pointer;
+}
+
+.circle-play{
+  width: 70px;
+  height: 70px;
+  border: 2px solid white;
+  border-radius: 50%;
+
+  display: inline-block;
+  position: relative;
+  transition: transform 0.5s ease 0s;
+}
+
+#contents .circle-play{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle-play .fa-play{
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
 }
 
 .item img{
@@ -310,7 +334,8 @@ nav ul li:first-child .underline{
 
 .player-side,
 .icon,
-.song-playing{
+.song-playing,
+.ctrl{
   justify-content: space-between;
 }
 
@@ -402,9 +427,7 @@ nav ul li:first-child .underline{
 }
 
 .ctrl{
-  justify-content: space-evenly;
   min-width: 200px;
-  width: 300px;
 }
 
 .song-playing{
@@ -415,28 +438,13 @@ nav ul li:first-child .underline{
   font-size: 10px;
 }
 
-.circle-play{
+#player .circle-play{
   width: 30px;
   height: 30px;
-  padding: 5px;
-  border: 2px solid white;
-  border-radius: 50%;
-
-  display: inline-block;
-  position: relative;
-  transition: transform 0.5s ease 0s;
 }
 
-.circle-play:hover{
+#player .circle-play:hover{
   transform: scale(1.2);
-}
-
-.circle-play .fa-play{
-  display: block;
-  position: relative;
-  top: 50%;
-  left: 64%;
-  transform: translate(-50%, -50%);
 }
 
 /************************* RESPONSIVE *************************/
