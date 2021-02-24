@@ -7,7 +7,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/master.css">
-    <title></title>
+    <title>Spotify Web</title>
+    <link rel="icon" type="image/ico" href="img/favicon.ico">
   </head>
   <body>
 
@@ -27,7 +28,7 @@
           </ul>
         </div>
 
-        <div class="playlist">
+        <div class="add-playlist">
           <h4>PLAYLIST</h4>
           <a href="#">
             <div class="add">
@@ -35,6 +36,9 @@
             </div>
             Crea Playlist
           </a>
+        </div>
+
+        <div class="my-playlist">
           <ul>
             <li><a href="#">Nuova Playlist</a></li>
             <li><a href="#">Nuova Playlist</a></li>
@@ -46,9 +50,17 @@
           </ul>
         </div>
 
-        <!-- <div class="profile">
-
-        </div> -->
+        <div class="profile">
+          <div class="upper">
+            <img src="img/download.svg" alt="">
+            <span>Installa app</span>
+          </div>
+          <hr>
+          <div>
+            <img src="img/profile.svg" alt="">
+            <span>John Doe</span>
+          </div>
+        </div>
       </aside>
 
       <!-- contents -->
@@ -233,7 +245,9 @@
         <div class="song-playing">
           <span>0:25</span>
           <div class="bar">
-            <div class="prog"></div>
+            <div class="prog">
+              <div class="handle"></div>
+            </div>
           </div>
           <span>4:35</span>
         </div>
@@ -246,7 +260,9 @@
         <a href="#"><i class="fas fa-desktop"></i></a>
         <a href="#"><i class="fas fa-volume-up"></i></a>
         <div class="bar">
-          <div class="prog"></div>
+          <div class="prog">
+            <div class="handle"></div>
+          </div>
         </div>
 
       </div>
@@ -256,6 +272,6 @@
 
 <!-- ATTENZIONE -->
 <!--
-- .caption é in absolute quindi attenzione a quando gli elementi vanno a capo
 - si possono centralizzare le transition?
+- layover degli album
  -->
