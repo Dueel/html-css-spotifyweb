@@ -47,13 +47,6 @@ main::after{
   clear: both;
 }
 
-#player{
-  height: 90px;
-  background-color: #282828;
-  display: flex;
-  justify-content: space-between;
-}
-
 ul{
   list-style: none;
 }
@@ -168,6 +161,7 @@ nav ul li{
   width: 35px;
   height: 2.5px;
   background-color: #ADFF2F;
+  border-radius: 3px;
   margin-top: 2.5px;
 
   display: none;
@@ -230,24 +224,6 @@ nav ul li:first-child .underline{
   cursor: pointer;
 }
 
-  /* IDEA: display flex? */
-/* .circle-play{
-  width: 50px;
-  height: 50px;
-  border: 1px solid white;
-  border-radius: 50%;
-
-  text-align: center;
-  line-height: 180px;
-
-  padding: 5px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
-
-
 .item img{
   width: 100%;
   display: block;
@@ -278,11 +254,28 @@ nav ul li:first-child .underline{
 }
 
 /* player */
+#player{
+  height: 90px;
+  color: white;
+  background-color: #282828;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
 .player-side,
-.player-center{
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid red;
-  padding: 22.5px 0;
+.player-center,
+.icon,
+.ctrl,
+.song-playing{
+  display: flex;
+  align-items: center;
+}
+
+.player-side,
+.icon,
+.song-playing{
+  justify-content: space-between;
 }
 
 .player-side{
@@ -301,6 +294,10 @@ nav ul li:first-child .underline{
 .player-center{
   flex-basis: 500px;
   flex-shrink: 3;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  padding: 0 10px;
 }
 
 .player-side img{
@@ -308,7 +305,7 @@ nav ul li:first-child .underline{
   float: left;
 }
 
-#now-playing{
+/* #now-playing{
   float: left;
   height: 45px;
   color: #878787;
@@ -317,31 +314,81 @@ nav ul li:first-child .underline{
   display: flex;
   flex-direction: column;
   justify-content: center;
+} */
+
+#now-playing{
+  flex-grow: 1;
+  margin: 0 10px;
 }
 
-#now-playing p{
-  color: white;
-  font-size: 14px;
+#now-playing span{
+  color: #878787;
+  font-size: 13px;
 }
 
 .icon{
-  width: 40px;
+  width: 45px;
   height: 45px;
-
   float: right;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 }
 
-.icon i{
-  color: #878787;
-  transition: color 0.5s ease 0s;
+.bar,
+.prog{
+  height: 3px;
+  border-radius: 5px;
 }
 
-.icon i:hover{
-  color: white;
+.bar{
+  flex-basis: 120px;
+  background-color: #5A5A5A;
+  display: inline-block;
+}
+
+.player-center .bar{
+  flex-grow: 1;
+  margin: 0 20px;
+}
+
+.ctrl{
+  justify-content: space-evenly;
+  width: 300px;
+}
+
+.song-playing{
+  width: 100%;
+}
+
+.song-playing span{
+  font-size: 10px;
+}
+
+.circle-play{
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  border: 2px solid white;
+  border-radius: 50%;
+
+  display: inline-block;
+  position: relative;
+  transition: transform 0.5s ease 0s;
+}
+
+.circle-play:hover{
+  transform: scale(1.2);
+}
+
+.circle-play .fa-play{
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 64%;
+  transform: translate(-50%, -50%);
+}
+
+.prog{
+  width: 40%;
+  background-color: #C1C1C1;
 }
 
 /************************* RESPONSIVE *************************/
@@ -379,7 +426,7 @@ nav ul li:first-child .underline{
 }
 
 /*MD*/
-@media all and (max-width: 639px) {
+@media all and (max-width: 878px) {
 
   .icon{
     width: auto;
